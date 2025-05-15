@@ -30,7 +30,6 @@ export default function Home() {
       <div className={`p-4 bg-[#fffefe] dark:bg-[#222121] text-black dark:text-white flex min-h-screen w-full"`}>
         <div className="w-full" id="base">
           <div className="flex flex-row justify-between items-center">
-            {/* <Select celebs={celebs} author={author} setAuthor={(newAuthor) => handleAuthorChange(newAuthor)} setQuotes={setQuotes} /> */}
             <a href="/" className="text-3xl font-bold pointer-events-none">
               Kanye or Hitler
             </a>

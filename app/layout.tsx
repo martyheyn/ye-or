@@ -6,7 +6,7 @@ import "./styles/animations.css";
 
 export const metadata: Metadata = {
   title: "Or Hitler",
-  description: "Whi said it, Kanye or Hitler",
+  description: "Who said it, Kanye or Hitler",
 };
 
 export default async function RootLayout({

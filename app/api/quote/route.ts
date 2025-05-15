@@ -13,9 +13,15 @@ export async function GET(request: Request) {
         `SELECT id, quote, null as answer FROM (
             (SELECT id, quote FROM quotes WHERE author = 'nazi' ORDER BY RANDOM() LIMIT 18/2) 
                 UNION ALL 
-            (SELECT id, quote FROM quotes WHERE author =$1 ORDER BY RANDOM() LIMIT 18/2)
+            (SELECT id, quote FROM quotes WHERE author =$1 AND quote NOT LIKE 'When I die yall better not blame it on the jews%'
+            ORDER BY RANDOM() LIMIT 16/2)
         ) AS combined_quotes ORDER BY RANDOM();`, [author]
     )
+
+    const single = await db.query(
+        `SELECT id, quote, null as answer FROM quotes WHERE quote LIKE 'When I die yall better not blame it on the jews%';`
+    )
+    result.rows = [...result.rows, single.rows[0]]
 
     return NextResponse.json(result.rows || { text: "No quote found" });
 }
