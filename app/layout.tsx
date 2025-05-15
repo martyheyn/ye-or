@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
 import { offside } from './fonts'
+import { Analytics } from "@vercel/analytics/next"
 import "./styles/globals.css";
 import "./styles/animations.css";
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
             enableSystem
         >
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
